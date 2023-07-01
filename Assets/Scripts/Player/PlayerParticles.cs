@@ -11,7 +11,7 @@ public class PlayerParticles : MonoBehaviour
         if (Instance == null)
         {
             Instance = GetComponent<PlayerParticles>();
-            Player.Instance.PlayersKiller.OnDeath.AddListener(SpawnDeathParticle);
+            Player.Instance.PlayersKiller.OnPlayerDead.AddListener(SpawnDeathParticle);
         }
         else
         {

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 
@@ -24,9 +25,9 @@ public class PlayerSpeedChanger : MonoBehaviour
         {
             Instance = GetComponent<PlayerSpeedChanger>();
             ForwardMovementSpeed = _startForwardSpeed;
-           if  (_isSpeedShouldIncreasing)
+            if (_isSpeedShouldIncreasing)
                 InvokeRepeating(nameof(IncreaseSpeed), _speedIncreaseStartDelay, _speedIncreaseRepeatDelay);
-            else 
+            else
                 Destroy(this);
         }
         else

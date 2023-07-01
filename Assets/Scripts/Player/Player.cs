@@ -1,3 +1,4 @@
+using System.Diagnostics.Contracts;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -11,6 +12,8 @@ public class Player : MonoBehaviour
     public RotaterByCenter PlayersPropellor => _playersPropellor;
     [SerializeField] private RotaterByCenter _playersPropellor;
 
+    public bool IsDead { get; set; }
+
     public PlayerMovement PlayersMovement => PlayerMovement.Instance;
     public PlayerKiller PlayersKiller => PlayerKiller.Instance;
     public PlayerSpeedChanger PlayersSpeedChanger => PlayerSpeedChanger.Instance;
@@ -23,17 +26,12 @@ public class Player : MonoBehaviour
         {
             Instance = GetComponent<Player>();
             _playersRB = GetComponent<Rigidbody>();
+            IsDead = false;
         }
         else
         {
             Debug.Log("Player script has 2 realization, one of them deleted.");
             Destroy(this);
         }
-    }
-
-    private void Start()
-    {
-        PlayersKiller.OnDeath.AddListener(() => PlayersRB.freezeRotation = false);
-        PlayersKiller.OnDeath.AddListener(() => PlayersRB.useGravity = true);
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody), typeof(Player))]
@@ -37,5 +38,11 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
+    }
+
+    private void OnDestroy()
+    {
+        if (_joystick != null)
+            Destroy(_joystick.gameObject);
     }
 }

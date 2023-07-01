@@ -4,8 +4,10 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Player))]
 public class PlayerKiller : MonoBehaviour
 {
+    [SerializeField] private float _afterDeathTimeModifer;
+
     public static PlayerKiller Instance { get; private set; }
-    public UnityEvent OnDeath;
+    [Space] public UnityEvent OnPlayerDead;
 
     private void Awake()
     {
@@ -20,11 +22,22 @@ public class PlayerKiller : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        OnPlayerDead.AddListener(() => Player.Instance.PlayersRB.freezeRotation = false);
+        OnPlayerDead.AddListener(() => Player.Instance.PlayersRB.useGravity = true);
+        OnPlayerDead.AddListener(() => Player.Instance.IsDead = true);
+        OnPlayerDead.AddListener(() => Time.timeScale = _afterDeathTimeModifer);
+    }
+
     public void Dead()
     {
-        Destroy(Player.Instance.PlayersSpeedChanger);
-        Destroy(Player.Instance.PlayersMovement);
-        Destroy(Player.Instance.PlayersPropellor);
-        OnDeath.Invoke();
+        if (!Player.Instance.IsDead)
+        {
+            Destroy(Player.Instance.PlayersSpeedChanger);
+            Destroy(Player.Instance.PlayersMovement);
+            Destroy(Player.Instance.PlayersPropellor);
+            OnPlayerDead.Invoke();
+        }
     }
 }
