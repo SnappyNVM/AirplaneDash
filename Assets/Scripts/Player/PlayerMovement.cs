@@ -10,15 +10,15 @@ public class PlayerMovement : MonoBehaviour
 
     private float _forwardMovementSpeed;
 
-    public static PlayerMovement Instance { get; private set; }
+    private static PlayerMovement _instance;
 
     public float ForwardMovementSpeed { get => _forwardMovementSpeed; set { _forwardMovementSpeed = value; } }
 
     private void Awake()
     {
-        if (Instance == null)
+        if (_instance == null)
         {
-            Instance = GetComponent<PlayerMovement>();
+            _instance = GetComponent<PlayerMovement>();
         }
         else
         {

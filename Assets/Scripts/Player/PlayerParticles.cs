@@ -5,13 +5,13 @@ public class PlayerParticles : MonoBehaviour
 {
     [SerializeField] private ParticleSystem _onDeathParticles;
 
-    public static PlayerParticles Instance { get; private set; }
+    private static PlayerParticles _instance;
 
     private void Start()
     {
-        if (Instance == null)
+        if (_instance == null)
         {
-            Instance = GetComponent<PlayerParticles>();
+            _instance = GetComponent<PlayerParticles>();
             Player.Instance.PlayersKiller.PlayerDead.AddListener(SpawnDeathParticle);
         }
         else

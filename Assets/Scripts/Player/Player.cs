@@ -14,11 +14,10 @@ public class Player : MonoBehaviour
 
     public bool IsDead { get; set; }
 
-    public PlayerMovement PlayersMovement => PlayerMovement.Instance;
-    public PlayerKiller PlayersKiller => PlayerKiller.Instance;
-    public PlayerSpeedChanger PlayersSpeedChanger => PlayerSpeedChanger.Instance;
-    public PlayerParticles PlayersParticles => PlayerParticles.Instance;
-    
+    public PlayerMovement PlayersMovement { get; private set; }
+    public PlayerKiller PlayersKiller { get; private set; }
+    public PlayerSpeedChanger PlayersSpeedChanger { get; private set; }
+    public PlayerParticles PlayersParticles { get; private set; }
 
     private void Awake()
     {
@@ -26,6 +25,11 @@ public class Player : MonoBehaviour
         {
             Instance = GetComponent<Player>();
             _playersRB = GetComponent<Rigidbody>();
+            PlayersMovement = GetComponent<PlayerMovement>();
+            PlayersKiller = GetComponent<PlayerKiller>();
+            PlayersSpeedChanger = GetComponent<PlayerSpeedChanger>();
+            PlayersParticles = GetComponent<PlayerParticles>();
+
             IsDead = false;
         }
         else

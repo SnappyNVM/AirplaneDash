@@ -12,9 +12,10 @@ public class PlayerSpeedChanger : MonoBehaviour
     [SerializeField] private float _speedIncreaseModifer;
     [SerializeField] private float _maxSpeed;
 
-    public static PlayerSpeedChanger Instance { get; private set; }
+    private static PlayerSpeedChanger _instance;
 
-    public float ForwardMovementSpeed { 
+    public float ForwardMovementSpeed
+    { 
         get { return Player.Instance.PlayersMovement.ForwardMovementSpeed; }
         set { Player.Instance.PlayersMovement.ForwardMovementSpeed = value; }
     }
@@ -22,9 +23,9 @@ public class PlayerSpeedChanger : MonoBehaviour
 
     private void Start()
     {
-        if (Instance == null)
+        if (_instance == null)
         {
-            Instance = GetComponent<PlayerSpeedChanger>();
+            _instance = GetComponent<PlayerSpeedChanger>();
             ForwardMovementSpeed = _startForwardSpeed;
             if (_isSpeedShouldIncreasing)
                 InvokeRepeating(nameof(IncreaseSpeed), _speedIncreaseStartDelay, _speedIncreaseRepeatDelay);

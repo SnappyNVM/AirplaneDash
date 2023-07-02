@@ -6,14 +6,14 @@ public class PlayerKiller : MonoBehaviour
 {
     [SerializeField] private float _afterDeathTimeModifer;
 
-    public static PlayerKiller Instance { get; private set; }
+    private static PlayerKiller _instance;
     [Space] public UnityEvent PlayerDead;
 
     private void Awake()
     {
-        if (Instance == null)
+        if (_instance == null)
         {
-            Instance = GetComponent<PlayerKiller>();
+            _instance = GetComponent<PlayerKiller>();
         }
         else
         {

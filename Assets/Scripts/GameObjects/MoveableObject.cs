@@ -14,6 +14,7 @@ public class MoveableObject : MonoBehaviour
 
     private Vector3 _axisActiveStates;
     private bool _isMovingPositive;
+    private float _currentSpeed;
 
 
     private void Start()
@@ -31,12 +32,12 @@ public class MoveableObject : MonoBehaviour
 
     private void Movement()
     {
-        float currentSpeed = _moveSpeed * Time.fixedDeltaTime;
-        if (Mathf.Abs(transform.localPosition.x) + currentSpeed > _maxDeviationDistance ||
-            Mathf.Abs(transform.localPosition.y) + currentSpeed > _maxDeviationDistance ||
-            Mathf.Abs(transform.localPosition.z) + currentSpeed > _maxDeviationDistance)
+        _currentSpeed = _moveSpeed * Time.fixedDeltaTime;
+        if (Mathf.Abs(transform.localPosition.x) + _currentSpeed > _maxDeviationDistance ||
+            Mathf.Abs(transform.localPosition.y) + _currentSpeed > _maxDeviationDistance ||
+            Mathf.Abs(transform.localPosition.z) + _currentSpeed > _maxDeviationDistance)
             _isMovingPositive = !_isMovingPositive;
 
-        transform.Translate(_axisActiveStates * currentSpeed * (_isMovingPositive ? 1 : -1));
+        transform.Translate(_axisActiveStates * _currentSpeed * (_isMovingPositive ? 1 : -1));
     }
 }
