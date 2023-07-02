@@ -1,22 +1,28 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class PercentScoreCounter : MonoBehaviour
+public class ScorePercentCounter : MonoBehaviour
 {
     // Put this script into finish pos for work.
     private float _zLevelDistance;
     private int _passedLevelPartPercent;
+    private int _currentFreeScorePercent;
+    private int _currentFixedScorePercent;
 
     public UnityEvent<int> ScorePercentChanged;
-    public static PercentScoreCounter Instance { get; private set; }
-    public int CurrentScorePercent { get; set; }
+    public static ScorePercentCounter Instance { get; private set; }
 
+    public int CurrentScorePercent
+    {
+        get => _currentFixedScorePercent;
+        set => _currentFixedScorePercent = Mathf.Clamp(value, 0, 100);
+    }
 
     private void Awake()
     {
         if (Instance == null)
         {
-            Instance = GetComponent<PercentScoreCounter>();
+            Instance = GetComponent<ScorePercentCounter>();
             _zLevelDistance = GetComponent<Transform>().position.z;
         }
         else
@@ -28,11 +34,11 @@ public class PercentScoreCounter : MonoBehaviour
 
     private void CheckScorePercent()
     {
-        int currentPercent = (int)(Player.Instance.transform.position.z / _zLevelDistance * 100);
-        if (_passedLevelPartPercent < currentPercent)
+        _currentFreeScorePercent = (int)(Player.Instance.transform.position.z / _zLevelDistance * 100);
+        if (_passedLevelPartPercent < _currentFreeScorePercent)
         {
-            CurrentScorePercent = currentPercent;
-            ScorePercentChanged?.Invoke(currentPercent);
+            CurrentScorePercent = _currentFreeScorePercent;
+            ScorePercentChanged?.Invoke(CurrentScorePercent);
         }
         _passedLevelPartPercent = (int)(Player.Instance.transform.position.z / _zLevelDistance * 100);
     }

@@ -24,8 +24,9 @@ public class AfterDeathLandingTracker : MonoBehaviour
         if (Player.Instance.PlayersRB.velocity.magnitude == 0)
         {
             HasLanded = true;
-            LevelPercentageSaver.Instance.SaveScore();
+            ScoreBestPercentSaver.Instance.SaveScore();
             AfterDeathPanelPresenter.Instance.UpdateDeathPanelWhenDead();
+            Destroy(this);
         }
     }
 }

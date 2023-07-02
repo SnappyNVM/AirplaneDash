@@ -26,8 +26,8 @@ public class AfterDeathPanelPresenter : MonoBehaviour
     public void UpdateDeathPanelWhenDead()
     {
         _onDeadPanel.SetActive(true);
-        _currentScore.text = "Your score: " + PercentScoreCounter.Instance.CurrentScorePercent + "%";
-        _bestScore.text = "Your best: " + LevelPercentageSaver.Instance.GetCurrentLevelRecord().ToString() + "%";
+        _currentScore.text = "Your score: " + ScorePercentCounter.Instance.CurrentScorePercent + "%";
+        _bestScore.text = "Your best: " + ScoreBestPercentSaver.Instance.GetCurrentLevelRecord().ToString() + "%";
         Destroy(gameObject);
     }
 }

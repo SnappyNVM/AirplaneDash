@@ -1,15 +1,15 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LevelPercentageSaver : MonoBehaviour
+public class ScoreBestPercentSaver : MonoBehaviour
 {
-    public static LevelPercentageSaver Instance { get; private set; }
+    public static ScoreBestPercentSaver Instance { get; private set; }
 
     private void Start()
     {
         if (Instance == null)
         {
-            Instance = GetComponent<LevelPercentageSaver>();
+            Instance = GetComponent<ScoreBestPercentSaver>();
         }
         else
         {
@@ -23,7 +23,7 @@ public class LevelPercentageSaver : MonoBehaviour
     public void SaveScore()
     {
         int currentRecord = GetCurrentLevelRecord();
-        if (currentRecord < PercentScoreCounter.Instance.CurrentScorePercent)
-            PlayerPrefs.SetInt(SceneManager.GetActiveScene().name, PercentScoreCounter.Instance.CurrentScorePercent);
+        if (currentRecord < ScorePercentCounter.Instance.CurrentScorePercent)
+            PlayerPrefs.SetInt(SceneManager.GetActiveScene().name, ScorePercentCounter.Instance.CurrentScorePercent);
     }
 }
