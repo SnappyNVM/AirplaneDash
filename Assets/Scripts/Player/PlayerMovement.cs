@@ -4,11 +4,14 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody), typeof(Player))]
 public class PlayerMovement : MonoBehaviour
 {
-    public static PlayerMovement Instance { get; private set; }
     [SerializeField] private FixedJoystick _joystick;
     [SerializeField] private float _horizontalMovementSpeed;
     [SerializeField] private float _verticalMovementSpeed;
+
     private float _forwardMovementSpeed;
+
+    public static PlayerMovement Instance { get; private set; }
+
     public float ForwardMovementSpeed { get => _forwardMovementSpeed; set { _forwardMovementSpeed = value; } }
 
     private void Awake()
@@ -19,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            Debug.Log("PlayerMovement script has 2 realization, one of them deleted.");
+            Debug.Log("PlayerMovement script has more then one realizations, all except one deleted.");
             Destroy(this);
         }
     }

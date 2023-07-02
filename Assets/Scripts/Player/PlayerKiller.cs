@@ -7,7 +7,7 @@ public class PlayerKiller : MonoBehaviour
     [SerializeField] private float _afterDeathTimeModifer;
 
     public static PlayerKiller Instance { get; private set; }
-    [Space] public UnityEvent OnPlayerDead;
+    [Space] public UnityEvent PlayerDead;
 
     private void Awake()
     {
@@ -17,17 +17,17 @@ public class PlayerKiller : MonoBehaviour
         }
         else
         {
-            Debug.Log("PlayerKiller script has 2 realization, one of them deleted.");
+            Debug.Log("PlayerKiller script has more then one realizations, all except one deleted.");
             Destroy(this);
         }
     }
 
     private void Start()
     {
-        OnPlayerDead.AddListener(() => Player.Instance.PlayersRB.freezeRotation = false);
-        OnPlayerDead.AddListener(() => Player.Instance.PlayersRB.useGravity = true);
-        OnPlayerDead.AddListener(() => Player.Instance.IsDead = true);
-        OnPlayerDead.AddListener(() => Time.timeScale = _afterDeathTimeModifer);
+        PlayerDead.AddListener(() => Player.Instance.PlayersRB.freezeRotation = false);
+        PlayerDead.AddListener(() => Player.Instance.PlayersRB.useGravity = true);
+        PlayerDead.AddListener(() => Player.Instance.IsDead = true);
+        PlayerDead.AddListener(() => Time.timeScale = _afterDeathTimeModifer);
     }
 
     public void Dead()
@@ -37,7 +37,7 @@ public class PlayerKiller : MonoBehaviour
             Destroy(Player.Instance.PlayersSpeedChanger);
             Destroy(Player.Instance.PlayersMovement);
             Destroy(Player.Instance.PlayersPropellor);
-            OnPlayerDead.Invoke();
+            PlayerDead?.Invoke();
         }
     }
 }

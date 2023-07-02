@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
         }
         else
         {
-            Debug.Log("Player script has 2 realization, one of them deleted.");
+            Debug.Log("Player script has more then one realizations, all except one deleted.");
             Destroy(this);
         }
     }

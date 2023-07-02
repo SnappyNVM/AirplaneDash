@@ -3,19 +3,20 @@ using UnityEngine;
 [RequireComponent(typeof(Player))]
 public class PlayerParticles : MonoBehaviour
 {
-    public static PlayerParticles Instance { get; private set; }
     [SerializeField] private ParticleSystem _onDeathParticles;
+
+    public static PlayerParticles Instance { get; private set; }
 
     private void Start()
     {
         if (Instance == null)
         {
             Instance = GetComponent<PlayerParticles>();
-            Player.Instance.PlayersKiller.OnPlayerDead.AddListener(SpawnDeathParticle);
+            Player.Instance.PlayersKiller.PlayerDead.AddListener(SpawnDeathParticle);
         }
         else
         {
-            Debug.Log("PlayersParticles script has 2 realization, one of them deleted.");
+            Debug.Log("PlayersParticles script has more then one realizations, all except one deleted.");
             Destroy(this);
         }
     }

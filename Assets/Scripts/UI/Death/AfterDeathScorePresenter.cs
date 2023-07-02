@@ -15,7 +15,7 @@ public class AfterDeathScorePresenter : MonoBehaviour
         {
             Instance = GetComponent<AfterDeathScorePresenter>();
             _onDeadPanel.SetActive(false);
-            Player.Instance.PlayersKiller.OnPlayerDead.AddListener(() => InvokeRepeating(nameof(UpdateDeathPanelWhenDead), 0, 0.5f));
+            Player.Instance.PlayersKiller.PlayerDead.AddListener(() => InvokeRepeating(nameof(UpdateDeathPanelWhenDead), 0, 0.5f));
         }
         else
         {

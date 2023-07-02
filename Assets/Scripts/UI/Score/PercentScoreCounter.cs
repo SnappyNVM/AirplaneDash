@@ -1,14 +1,13 @@
-using System.Data;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class PercentScoreCounter : MonoBehaviour
 {
-    // Put this script to finish pos for work.
+    // Put this script into finish pos for work.
     private float _zLevelDistance;
     private int _passedLevelPartPercent;
 
-    public UnityEvent<int> OnScorePercentChanged;
+    public UnityEvent<int> ScorePercentChanged;
     public static PercentScoreCounter Instance { get; private set; }
     public int CurrentScorePercent { get; set; }
 
@@ -22,7 +21,7 @@ public class PercentScoreCounter : MonoBehaviour
         }
         else
         {
-            Debug.Log("PercentScoreCounter script has 2 realization, one of them deleted.");
+            Debug.Log("PercentScoreCounter script has more then one realizations, all except one deleted.");
             Destroy(this);
         }
     }
@@ -33,7 +32,7 @@ public class PercentScoreCounter : MonoBehaviour
         if (_passedLevelPartPercent < currentPercent)
         {
             CurrentScorePercent = currentPercent;
-            OnScorePercentChanged.Invoke(currentPercent);
+            ScorePercentChanged?.Invoke(currentPercent);
         }
         _passedLevelPartPercent = (int)(Player.Instance.transform.position.z / _zLevelDistance * 100);
     }

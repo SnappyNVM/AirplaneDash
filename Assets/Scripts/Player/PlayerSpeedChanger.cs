@@ -5,6 +5,13 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerMovement))]
 public class PlayerSpeedChanger : MonoBehaviour
 {
+    [SerializeField] private bool _isSpeedShouldIncreasing;
+    [SerializeField] private float _startForwardSpeed;
+    [SerializeField] private float _speedIncreaseStartDelay;
+    [SerializeField] private float _speedIncreaseRepeatDelay;
+    [SerializeField] private float _speedIncreaseModifer;
+    [SerializeField] private float _maxSpeed;
+
     public static PlayerSpeedChanger Instance { get; private set; }
 
     public float ForwardMovementSpeed { 
@@ -12,12 +19,6 @@ public class PlayerSpeedChanger : MonoBehaviour
         set { Player.Instance.PlayersMovement.ForwardMovementSpeed = value; }
     }
 
-    [SerializeField] private bool _isSpeedShouldIncreasing;
-    [SerializeField] private float _startForwardSpeed;
-    [SerializeField] private float _speedIncreaseStartDelay;
-    [SerializeField] private float _speedIncreaseRepeatDelay;
-    [SerializeField] private float _speedIncreaseModifer;
-    [SerializeField] private float _maxSpeed;
 
     private void Start()
     {
@@ -32,7 +33,7 @@ public class PlayerSpeedChanger : MonoBehaviour
         }
         else
         {
-            Debug.Log("PlayerSpeedChanger script has 2 realization, one of them deleted.");
+            Debug.Log("PlayerSpeedChanger script has more then one realizations, all except one deleted.");
             Destroy(this);
         }
     }
