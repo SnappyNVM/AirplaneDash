@@ -1,4 +1,3 @@
-using System.Diagnostics.Contracts;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -18,6 +17,7 @@ public class Player : MonoBehaviour
     public PlayerKiller PlayersKiller { get; private set; }
     public PlayerSpeedChanger PlayersSpeedChanger { get; private set; }
     public PlayerParticles PlayersParticles { get; private set; }
+    public FinishEnterer PlayersFinishEnterer { get; private set; }
 
     private void Awake()
     {
@@ -29,6 +29,7 @@ public class Player : MonoBehaviour
             PlayersKiller = GetComponent<PlayerKiller>();
             PlayersSpeedChanger = GetComponent<PlayerSpeedChanger>();
             PlayersParticles = GetComponent<PlayerParticles>();
+            PlayersFinishEnterer = GetComponent<FinishEnterer>();
 
             IsDead = false;
         }
@@ -37,5 +38,15 @@ public class Player : MonoBehaviour
             Debug.Log("Player script has more then one realizations, all except one deleted.");
             Destroy(this);
         }
+    }
+
+    public void MakeThePlayerFall()
+    {
+        Destroy(Instance.PlayersPropellor);
+        Destroy(PlayersSpeedChanger);
+        Destroy(PlayersMovement);
+
+        PlayersRB.freezeRotation = false;
+        PlayersRB.useGravity = true;
     }
 }

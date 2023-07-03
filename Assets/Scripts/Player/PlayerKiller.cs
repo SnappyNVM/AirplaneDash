@@ -24,19 +24,15 @@ public class PlayerKiller : MonoBehaviour
 
     private void Start()
     {
-        PlayerDead.AddListener(() => Player.Instance.PlayersRB.freezeRotation = false);
-        PlayerDead.AddListener(() => Player.Instance.PlayersRB.useGravity = true);
+        PlayerDead.AddListener(() => Player.Instance.MakeThePlayerFall());
         PlayerDead.AddListener(() => Player.Instance.IsDead = true);
         PlayerDead.AddListener(() => Time.timeScale = _afterDeathTimeModifer);
     }
 
     public void Dead()
     {
-        if (!Player.Instance.IsDead)
+        if (!Player.Instance.IsDead && !Player.Instance.PlayersFinishEnterer.IsFinished)
         {
-            Destroy(Player.Instance.PlayersSpeedChanger);
-            Destroy(Player.Instance.PlayersMovement);
-            Destroy(Player.Instance.PlayersPropellor);
             PlayerDead?.Invoke();
         }
     }

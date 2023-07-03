@@ -34,7 +34,10 @@ public class ScorePercentCounter : MonoBehaviour
 
     private void CheckScorePercent()
     {
-        _currentFreeScorePercent = (int)(Player.Instance.transform.position.z / _zLevelDistance * 100);
+        if (Player.Instance.IsDead == false)
+        {
+            _currentFreeScorePercent = (int)(Player.Instance.transform.position.z / _zLevelDistance * 100);
+        }
         if (_passedLevelPartPercent < _currentFreeScorePercent)
         {
             CurrentScorePercent = _currentFreeScorePercent;
