@@ -4,9 +4,9 @@ public class Danger : MonoBehaviour
 {
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.TryGetComponent(out PlayerMovement playerMovement))
+        if (collision.gameObject.TryGetComponent(out Player player))
         {
-            Player.Instance.PlayersKiller.Dead();
+            player.PlayersKiller.Dead();
         }
     }
 }

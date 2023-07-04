@@ -1,0 +1,134 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4907477014112651847
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6265641364876537617}
+  m_Layer: 0
+  m_Name: Pink Moving Enemy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6265641364876537617
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4907477014112651847}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7055952117156546282}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1777599600768689744
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6265641364876537617}
+    m_Modifications:
+    - target: {fileID: 8720419131042323000, guid: e37e982064d15b147b59ee2ecaa9fcd8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c121e11c1fbe994a928335538344c18, type: 2}
+    - target: {fileID: 8737135534561403066, guid: e37e982064d15b147b59ee2ecaa9fcd8, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8737135534561403066, guid: e37e982064d15b147b59ee2ecaa9fcd8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8737135534561403066, guid: e37e982064d15b147b59ee2ecaa9fcd8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8737135534561403066, guid: e37e982064d15b147b59ee2ecaa9fcd8, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8737135534561403066, guid: e37e982064d15b147b59ee2ecaa9fcd8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8737135534561403066, guid: e37e982064d15b147b59ee2ecaa9fcd8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8737135534561403066, guid: e37e982064d15b147b59ee2ecaa9fcd8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8737135534561403066, guid: e37e982064d15b147b59ee2ecaa9fcd8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8737135534561403066, guid: e37e982064d15b147b59ee2ecaa9fcd8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8737135534561403066, guid: e37e982064d15b147b59ee2ecaa9fcd8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8737135534561403066, guid: e37e982064d15b147b59ee2ecaa9fcd8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8737135534561403066, guid: e37e982064d15b147b59ee2ecaa9fcd8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8737135534561403066, guid: e37e982064d15b147b59ee2ecaa9fcd8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8737135534561403066, guid: e37e982064d15b147b59ee2ecaa9fcd8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742479179743236086, guid: e37e982064d15b147b59ee2ecaa9fcd8, type: 3}
+      propertyPath: m_Name
+      value: Pink Big-Moving Enemy
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e37e982064d15b147b59ee2ecaa9fcd8, type: 3}
+--- !u!4 &7055952117156546282 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8737135534561403066, guid: e37e982064d15b147b59ee2ecaa9fcd8, type: 3}
+  m_PrefabInstance: {fileID: 1777599600768689744}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7059615710051936678 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8742479179743236086, guid: e37e982064d15b147b59ee2ecaa9fcd8, type: 3}
+  m_PrefabInstance: {fileID: 1777599600768689744}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5101473248230225233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7059615710051936678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d37a30e1f376274dbd1e9f59ed71768, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isMoveInXAxis: 0
+  _isMoveInYAxis: 0
+  _isMoveInZAxis: 0
+  _moveSpeed: 0
+  _maxDeviationDistance: 0

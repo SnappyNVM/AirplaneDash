@@ -26,4 +26,11 @@ public class ScoreBestPercentSaver : MonoBehaviour
         if (currentRecord < ScorePercentCounter.Instance.CurrentScorePercent)
             PlayerPrefs.SetInt(SceneManager.GetActiveScene().name, ScorePercentCounter.Instance.CurrentScorePercent);
     }
+
+    public void SaveScore(int percent)
+    {
+        int currentRecord = GetCurrentLevelRecord();
+        if (currentRecord < percent)
+            PlayerPrefs.SetInt(SceneManager.GetActiveScene().name, percent);
+    }
 }

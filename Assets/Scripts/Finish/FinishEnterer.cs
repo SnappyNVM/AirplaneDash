@@ -11,8 +11,9 @@ public class FinishEnterer : MonoBehaviour
     {
         if (_instance == null)
         {
-            PlayerFinished.AddListener(() => IsFinished = true);
             PlayerFinished.AddListener(() => Player.Instance.MakeThePlayerFall());
+            // 100 Isn't magic number probably? It's just a max percent :/
+            PlayerFinished.AddListener(() => ScoreBestPercentSaver.Instance.SaveScore(100)); 
             _instance = GetComponent<FinishEnterer>();
         }
         else
@@ -24,6 +25,7 @@ public class FinishEnterer : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        IsFinished = true;
         PlayerFinished?.Invoke();
     }
 }
