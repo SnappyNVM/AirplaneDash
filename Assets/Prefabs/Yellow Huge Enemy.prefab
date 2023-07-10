@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 565175fc23adbb8479f5ec980a7227a5, type: 2}
     - target: {fileID: 1463491935672824056, guid: 8433ed6bd3270144ca59013438868623, type: 3}
       propertyPath: m_Name
-      value: 'Yellow Huge Enemy  '
+      value: Yellow Huge Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 1467137935639633844, guid: 8433ed6bd3270144ca59013438868623, type: 3}
       propertyPath: m_RootOrder
@@ -71,5 +71,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6590916896998651754, guid: 8433ed6bd3270144ca59013438868623, type: 3}
+    - {fileID: 8242938194691226091, guid: 8433ed6bd3270144ca59013438868623, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8433ed6bd3270144ca59013438868623, type: 3}
+--- !u!1 &8081285417982895314 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1463491935672824056, guid: 8433ed6bd3270144ca59013438868623, type: 3}
+  m_PrefabInstance: {fileID: 7235349925482419242}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &5367188492721507275
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8081285417982895314}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.6220222
+  m_Center: {x: 0, y: 2.3887737, z: 0.011135484}
