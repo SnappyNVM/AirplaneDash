@@ -48,6 +48,6 @@ public class ScorePercentCounter : MonoBehaviour
 
     private void Update()
     {
-        CheckScorePercent();
+        CheckScorePercent(); 
     }
 }

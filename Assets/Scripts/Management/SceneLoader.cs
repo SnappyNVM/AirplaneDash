@@ -15,13 +15,13 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadTheScene()
     {
-        SceneManager.LoadScene(_sceneToLoad.ToString());
+        SceneManager.LoadScene(_sceneToLoad.ToString(), LoadSceneMode.Single);
         Time.timeScale = 1.0f;
     }
 
     public void LoadItself()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
         Time.timeScale = 1.0f;
     }
 }
