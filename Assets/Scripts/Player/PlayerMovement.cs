@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody), typeof(Player))]
@@ -30,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
     private void Move()
     {
         Player.Instance.PlayersRB.velocity = 
-        new Vector3(_horizontalMovementSpeed * _joystick.Horizontal, _verticalMovementSpeed * _joystick.Vertical, _forwardMovementSpeed);
+        new Vector3(_horizontalMovementSpeed * _joystick.Horizontal, _verticalMovementSpeed * _joystick.Vertical, _forwardMovementSpeed) * Time.fixedDeltaTime;
 
         float pitch = Mathf.Lerp(0, 20, Mathf.Abs(_joystick.Vertical)) * Mathf.Sign(_joystick.Vertical);
         float roll = Mathf.Lerp(0, 30, Mathf.Abs(_joystick.Horizontal)) * -Mathf.Sign(_joystick.Horizontal);
@@ -38,10 +37,7 @@ public class PlayerMovement : MonoBehaviour
         transform.localRotation = Quaternion.Euler(Vector3.forward * roll + Vector3.right * pitch);
     }
 
-    private void FixedUpdate()
-    {
-        Move();
-    }
+    private void FixedUpdate() => Move();
 
     private void OnDestroy()
     {

@@ -1529,7 +1529,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 995663891}
   m_Follow: {fileID: 995663891}
   m_Lens:
-    FieldOfView: 60
+    FieldOfView: 50
     OrthographicSize: 5
     NearClipPlane: 0.3
     FarClipPlane: 1000
@@ -2395,7 +2395,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.002161, y: -97}
+  m_AnchoredPosition: {x: -0, y: -90.6}
   m_SizeDelta: {x: 446.53, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &403311842
@@ -5184,7 +5184,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 50
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -5441,8 +5441,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _joystick: {fileID: 681023336}
-  _horizontalMovementSpeed: 50
-  _verticalMovementSpeed: 50
+  _horizontalMovementSpeed: 3000
+  _verticalMovementSpeed: 3000
 --- !u!114 &995663893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5468,7 +5468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27c54fd5f23f31b4f8760bd6216f8894, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _afterDeathTimeModifer: 5
+  _afterDeathTimeModifer: 3
   PlayerDead:
     m_PersistentCalls:
       m_Calls: []
@@ -5485,11 +5485,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isSpeedShouldIncreasing: 1
-  _startForwardSpeed: 1
+  _startForwardSpeed: 100
   _speedIncreaseStartDelay: 0.3
   _speedIncreaseRepeatDelay: 0.1
-  _speedIncreaseModifer: 5
-  _maxSpeed: 200
+  _speedIncreaseModifer: 250
+  _maxSpeed: 20000
 --- !u!114 &995663896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5554,7 +5554,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000011206, y: 33}
+  m_AnchoredPosition: {x: -0, y: 37.4}
   m_SizeDelta: {x: 446.5308, y: 84}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1016435616
@@ -5896,6 +5896,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04dc34a5249e87b4cbad7a69b610b881, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1065724179
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1065724181}
+  - component: {fileID: 1065724180}
+  m_Layer: 0
+  m_Name: PermanentScriptsHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1065724180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065724179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 590e84d1bbfd8ca4fad706b3a1fb3cc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LanguageChanged:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!4 &1065724181
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065724179}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 538.78125, y: 375.75476, z: 1412.1416}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1070845256
 GameObject:
   m_ObjectHideFlags: 0
@@ -5913,7 +5960,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1070845257
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7496,7 +7543,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1459383358
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10497,7 +10544,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0013103, y: -34}
+  m_AnchoredPosition: {x: -0, y: -28.6}
   m_SizeDelta: {x: 446.53, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2024025532
