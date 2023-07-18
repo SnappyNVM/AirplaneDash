@@ -15,6 +15,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Yellow Huge Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 1463491935672824056, guid: 8433ed6bd3270144ca59013438868623, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 1467137935639633844, guid: 8433ed6bd3270144ca59013438868623, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -70,6 +74,10 @@ PrefabInstance:
     - target: {fileID: 1467137935639633844, guid: 8433ed6bd3270144ca59013438868623, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013239242410979375, guid: 8433ed6bd3270144ca59013438868623, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6590916896998651754, guid: 8433ed6bd3270144ca59013438868623, type: 3}

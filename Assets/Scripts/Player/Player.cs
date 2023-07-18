@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
     public PlayerSpeedChanger PlayersSpeedChanger { get; private set; }
     public PlayerParticles PlayersParticles { get; private set; }
     public FinishEnterer PlayersFinishEnterer { get; private set; }
+    public PlayerFallingDoer PlayersFallingDoer { get; private set; }
 
     private void Awake()
     {
@@ -30,6 +31,7 @@ public class Player : MonoBehaviour
             PlayersSpeedChanger = GetComponent<PlayerSpeedChanger>();
             PlayersParticles = GetComponent<PlayerParticles>();
             PlayersFinishEnterer = GetComponent<FinishEnterer>();
+            PlayersFallingDoer = GetComponent<PlayerFallingDoer>();
 
             IsDead = false;
         }
@@ -38,15 +40,5 @@ public class Player : MonoBehaviour
             Debug.Log("Player script has more then one realizations, all except one deleted.");
             Destroy(this);
         }
-    }
-
-    public void MakeThePlayerFall()
-    {
-        Destroy(Instance.PlayersPropellor);
-        Destroy(PlayersSpeedChanger);
-        Destroy(PlayersMovement);
-
-        PlayersRB.freezeRotation = false;
-        PlayersRB.useGravity = true;
     }
 }

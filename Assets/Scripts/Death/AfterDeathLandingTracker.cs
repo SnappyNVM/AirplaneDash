@@ -15,6 +15,7 @@ public class AfterDeathLandingTracker : MonoBehaviour
         }
         else
         {
+            Debug.Log("AfterDeathLandingTracker script has more then one realizations, all except one deleted.");
             Destroy(this);
         }
     }

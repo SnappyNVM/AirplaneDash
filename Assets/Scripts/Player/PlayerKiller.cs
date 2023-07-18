@@ -24,7 +24,7 @@ public class PlayerKiller : MonoBehaviour
 
     private void Start()
     {
-        PlayerDead.AddListener(() => Player.Instance.MakeThePlayerFall());
+        PlayerDead.AddListener(() => Player.Instance.PlayersFallingDoer.MakeThePlayerFall());
         PlayerDead.AddListener(() => Player.Instance.IsDead = true);
         PlayerDead.AddListener(() => Time.timeScale = _afterDeathTimeModifer);
     }

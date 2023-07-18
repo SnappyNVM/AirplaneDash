@@ -15,7 +15,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5603899303882349625
 Transform:
@@ -56,6 +56,10 @@ PrefabInstance:
     - target: {fileID: 1006393954332196, guid: 2dc0e72f48efa094996be8621ad92a68, type: 3}
       propertyPath: m_Name
       value: Red Enemy Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1006393954332196, guid: 2dc0e72f48efa094996be8621ad92a68, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4678747941192040, guid: 2dc0e72f48efa094996be8621ad92a68, type: 3}
       propertyPath: m_RootOrder
@@ -129,6 +133,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1006393954332196, guid: 2dc0e72f48efa094996be8621ad92a68, type: 3}
   m_PrefabInstance: {fileID: 8741510180530741714}
   m_PrefabAsset: {fileID: 0}
+--- !u!135 &2267585273043125989
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8742479179743236086}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.6174319
+  m_Center: {x: 0, y: 2.4753108, z: -0.005876541}
 --- !u!114 &916117661505349459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,16 +172,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04dc34a5249e87b4cbad7a69b610b881, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!135 &2267585273043125989
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8742479179743236086}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 2.6174319
-  m_Center: {x: 0, y: 2.4753108, z: -0.005876541}

@@ -39,6 +39,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8111703257904113875}
     m_Modifications:
+    - target: {fileID: 885203313397141281, guid: e37e982064d15b147b59ee2ecaa9fcd8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8720419131042323000, guid: e37e982064d15b147b59ee2ecaa9fcd8, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -90,6 +94,10 @@ PrefabInstance:
     - target: {fileID: 8742479179743236086, guid: e37e982064d15b147b59ee2ecaa9fcd8, type: 3}
       propertyPath: m_Name
       value: Green Moving Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742479179743236086, guid: e37e982064d15b147b59ee2ecaa9fcd8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e37e982064d15b147b59ee2ecaa9fcd8, type: 3}

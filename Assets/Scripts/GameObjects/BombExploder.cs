@@ -8,7 +8,8 @@ public class BombExploder : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.TryGetComponent(out Player player))
-        { 
+        {
+            SoundEffectsPlayer.Instance.PlayExplosionSound();
             var explosion = Instantiate(_explosion, transform.position, Quaternion.identity);
             explosion.transform.localScale = player.transform.localScale * _scaleModifer;
             Destroy(gameObject);
