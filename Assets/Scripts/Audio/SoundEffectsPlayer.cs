@@ -5,6 +5,7 @@ public class SoundEffectsPlayer : MonoBehaviour
 {
     [SerializeField] private AudioSource _main;
     [SerializeField] private AudioClip _explosion;
+    [SerializeField] private AudioClip _finish;
 
 
     public static SoundEffectsPlayer Instance { get; private set; } 
@@ -14,7 +15,7 @@ public class SoundEffectsPlayer : MonoBehaviour
         if (Instance == null)
         {
             Instance = GetComponent<SoundEffectsPlayer>();
-            Player.Instance.PlayersKiller.PlayerDead.AddListener(PlayExplosionSound);
+            Player.Instance.PlayersFinishEnterer.PlayerFinished.AddListener(() => _main.PlayOneShot(_finish));
         }
         else
         {
