@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-enum Scenes
+public enum Scenes
 { 
     Menu,
     LevelMenu,
@@ -12,6 +12,7 @@ enum Scenes
 public class SceneLoader : MonoBehaviour
 {
     [SerializeField] private Scenes _sceneToLoad;
+    public Scenes SceneToLoad => _sceneToLoad;
 
     public void LoadTheScene()
     {

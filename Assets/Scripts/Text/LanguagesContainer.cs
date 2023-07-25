@@ -17,7 +17,10 @@ public enum TextKeys
     gameOver,
     sounds,
     levelPassed,
-    levelSelect
+    levelSelect,
+    music,
+    language,
+    gamePaused
 }
 
 public class LanguagesContainer : MonoBehaviour
@@ -60,7 +63,10 @@ public class LanguagesContainer : MonoBehaviour
                 ["gameOver"] = "Ты разбился",
                 ["sounds"] = "Звуки",
                 ["levelPassed"] = "Уровень пройден!",
-                ["levelSelect"] = "Выбор уровня:"
+                ["levelSelect"] = "Выбор уровня:",
+                ["music"] = "Музыка:",
+                ["language"] = "Язык:",
+                ["gamePaused"] = "Игра на паузе..."
             },
 
             [Languages.English] = new Dictionary<string, string>()
@@ -70,7 +76,10 @@ public class LanguagesContainer : MonoBehaviour
                 ["gameOver"] = "You crashed",
                 ["sounds"] = "Sounds",
                 ["levelPassed"] = "Level passed!",
-                ["levelSelect"] = "Level select:"
+                ["levelSelect"] = "Level select:",
+                ["music"] = "Music:",
+                ["language"] = "Language:",
+                ["gamePaused"] = "Game paused..."
             },
 
             [Languages.Turkish] = new Dictionary<string, string>()
@@ -80,7 +89,10 @@ public class LanguagesContainer : MonoBehaviour
                 ["gameOver"] = "Kaybettin",
                 ["sounds"] = "Sesler",
                 ["levelPassed"] = "Seviye Geçti!",
-                ["levelSelect"] = "Seviye seçimi:"
+                ["levelSelect"] = "Seviye seçimi:",
+                ["music"] = "Müzik:",
+                ["language"] = "Dil:",
+                ["gamePaused"] = "Oyun duraklatıldı..."
             }
         };
     }

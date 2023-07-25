@@ -25,10 +25,7 @@ public class MoveableObject : MonoBehaviour
             _isMoveInZAxis ? 1 : 0);
     }
 
-    private void FixedUpdate()
-    {
-        Movement();
-    }
+    private void FixedUpdate() => Movement();
 
     private void Movement()
     {

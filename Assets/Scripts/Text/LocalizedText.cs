@@ -16,8 +16,6 @@ public class LocalizedText : MonoBehaviour
         UpdateText();
     }
 
-    private void OnEnable() => LanguagesContainer.Instance.LanguageChanged.AddListener(UpdateText);
-
     protected virtual void UpdateText() =>
         _selfText.text = LanguagesContainer.Instance.WordsDictionary[LanguagesContainer.GameLanguage][UsefulKey];
 }
