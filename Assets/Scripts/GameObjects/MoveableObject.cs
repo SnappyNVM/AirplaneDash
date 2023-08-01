@@ -8,6 +8,11 @@ public class MoveableObject : MonoBehaviour
     [SerializeField] private bool _isMoveInYAxis;
     [SerializeField] private bool _isMoveInZAxis;
 
+    [Header("PositiveOrNegative")]
+    [SerializeField] private bool _isXAxisNegative;
+    [SerializeField] private bool _isYAxisNegative;
+    [SerializeField] private bool _isZAxisNegative;
+
     [Header("Settings")]
     [SerializeField] private float _moveSpeed;
     [SerializeField] private float _maxDeviationDistance;
@@ -20,9 +25,9 @@ public class MoveableObject : MonoBehaviour
     private void Start()
     {
         _axisActiveStates = new Vector3
-            (_isMoveInXAxis ? 1 : 0,
-            _isMoveInYAxis ? 1 : 0,
-            _isMoveInZAxis ? 1 : 0);
+            ((_isMoveInXAxis ? 1 : 0) * (_isXAxisNegative ? -1 : 1),
+            (_isMoveInZAxis ? 1 : 0) * (_isZAxisNegative ? -1 : 1),
+            (_isMoveInYAxis ? 1 : 0) * (_isYAxisNegative ? -1 : 1));
     }
 
     private void FixedUpdate() => Movement();

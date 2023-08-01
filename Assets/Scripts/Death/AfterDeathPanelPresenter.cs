@@ -26,9 +26,9 @@ public class AfterDeathPanelPresenter : MonoBehaviour
     public void UpdateDeathPanelWhenDead()
     {
         _onDeadPanel.SetActive(true);
-        _currentScore.text = LanguagesContainer.Instance.WordsDictionary[LanguagesContainer.GameLanguage]["yourScore"]
+        _currentScore.text = LanguagesContainer.Instance.WordsDictionary[LanguagesContainer.GameLanguage][TextKeys.yourScore]
             + ScorePercentCounter.Instance.CurrentScorePercent + "%";
-        _bestScore.text = LanguagesContainer.Instance.WordsDictionary[LanguagesContainer.GameLanguage]["best"]
+        _bestScore.text = LanguagesContainer.Instance.WordsDictionary[LanguagesContainer.GameLanguage][TextKeys.best]
             + ScoreBestPercentSaver.Instance.GetCurrentLevelRecord().ToString() + "%";
         Destroy(gameObject);
     }

@@ -5,8 +5,8 @@ public enum Scenes
 { 
     Menu,
     LevelMenu,
-    DefaultLevel,
-    Level1
+    Level1,
+    Level2
 }
 
 public class SceneLoader : MonoBehaviour

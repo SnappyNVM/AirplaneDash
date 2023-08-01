@@ -6,7 +6,6 @@ public class LocalizedText : MonoBehaviour
 {
     [SerializeField] protected TextKeys _key;
 
-    protected string UsefulKey => _key.ToString();
     protected TMP_Text _selfText;
 
     private void Start()
@@ -17,6 +16,6 @@ public class LocalizedText : MonoBehaviour
     }
 
     protected virtual void UpdateText() =>
-        _selfText.text = LanguagesContainer.Instance.WordsDictionary[LanguagesContainer.GameLanguage][UsefulKey];
+        _selfText.text = LanguagesContainer.Instance.WordsDictionary[LanguagesContainer.GameLanguage][_key];
 }
 

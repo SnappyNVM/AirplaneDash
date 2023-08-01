@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -23,13 +24,23 @@ public enum TextKeys
     gamePaused
 }
 
+public enum SpriteKeys
+{ 
+    logo
+}
+
 public class LanguagesContainer : MonoBehaviour
 {
+    [SerializeField] private Sprite _russianLogo;
+    [SerializeField] private Sprite _englishLogo;
+    [SerializeField] private Sprite _turkishLogo;
+
     private static Languages gameLanguage = Languages.Russian;
 
     public static LanguagesContainer Instance { get; private set; }
     public static Languages GameLanguage => gameLanguage;
-    public Dictionary<Languages, Dictionary<string, string>> WordsDictionary { get; set; }
+    public Dictionary<Languages, Dictionary<TextKeys, string>> WordsDictionary { get; private set; }
+    public Dictionary<Languages, Dictionary<SpriteKeys, Sprite>> SpritesDictionary { get; private set; }
     public UnityEvent LanguageChanged;
 
     private void Awake()
@@ -38,6 +49,7 @@ public class LanguagesContainer : MonoBehaviour
         {
             Instance = GetComponent<LanguagesContainer>();
             FillWordsDictionary();
+            FillSpritesDictionary();
         }
         else
         {
@@ -54,45 +66,66 @@ public class LanguagesContainer : MonoBehaviour
 
     private void FillWordsDictionary()
     {
-        WordsDictionary = new Dictionary<Languages, Dictionary<string, string>>()
+        WordsDictionary = new Dictionary<Languages, Dictionary<TextKeys, string>>()
         {
-            [Languages.Russian] = new Dictionary<string, string>()
+            [Languages.Russian] = new Dictionary<TextKeys, string>()
             {
-                ["yourScore"] = "Твой счёт: ",
-                ["best"] = "Рекорд: ",
-                ["gameOver"] = "Ты разбился",
-                ["sounds"] = "Звуки",
-                ["levelPassed"] = "Уровень пройден!",
-                ["levelSelect"] = "Выбор уровня:",
-                ["music"] = "Музыка:",
-                ["language"] = "Язык:",
-                ["gamePaused"] = "Игра на паузе..."
+                [TextKeys.yourScore] = "Твой счёт: ",
+                [TextKeys.best] = "Рекорд: ",
+                [TextKeys.gameOver] = "Ты разбился",
+                [TextKeys.sounds] = "Звуки",
+                [TextKeys.levelPassed] = "Уровень пройден!",
+                [TextKeys.levelSelect] = "Выбор уровня:",
+                [TextKeys.music] = "Музыка:",
+                [TextKeys.language] = "Язык:",
+                [TextKeys.gamePaused] = "Игра на паузе..."
             },
 
-            [Languages.English] = new Dictionary<string, string>()
+            [Languages.English] = new Dictionary<TextKeys, string>()
             {
-                ["yourScore"] = "Your score: ",
-                ["best"] = "Best: ",
-                ["gameOver"] = "You crashed",
-                ["sounds"] = "Sounds",
-                ["levelPassed"] = "Level passed!",
-                ["levelSelect"] = "Level select:",
-                ["music"] = "Music:",
-                ["language"] = "Language:",
-                ["gamePaused"] = "Game paused..."
+                [TextKeys.yourScore] = "Your score: ",
+                [TextKeys.best] = "Best: ",
+                [TextKeys.gameOver] = "You crashed",
+                [TextKeys.sounds] = "Sounds",
+                [TextKeys.levelPassed] = "Level passed!",
+                [TextKeys.levelSelect] = "Level select:",
+                [TextKeys.music] = "Music:",
+                [TextKeys.language] = "Language:",
+                [TextKeys.gamePaused] = "Game paused..."
             },
 
-            [Languages.Turkish] = new Dictionary<string, string>()
+            [Languages.Turkish] = new Dictionary<TextKeys, string>()
             {
-                ["yourScore"] = "Puanınız ",
-                ["best"] = "En iyisi ",
-                ["gameOver"] = "Kaybettin",
-                ["sounds"] = "Sesler",
-                ["levelPassed"] = "Seviye Geçti!",
-                ["levelSelect"] = "Seviye seçimi:",
-                ["music"] = "Müzik:",
-                ["language"] = "Dil:",
-                ["gamePaused"] = "Oyun duraklatıldı..."
+                [TextKeys.yourScore] = "Puanınız ",
+                [TextKeys.best] = "En iyisi ",
+                [TextKeys.gameOver] = "Kaybettin",
+                [TextKeys.sounds] = "Sesler",
+                [TextKeys.levelPassed] = "Seviye Geçti!",
+                [TextKeys.levelSelect] = "Seviye seçimi:",
+                [TextKeys.music] = "Müzik:",
+                [TextKeys.language] = "Dil:",
+                [TextKeys.gamePaused] = "Oyun duraklatıldı..."
+            }
+        };
+    }
+
+    private void FillSpritesDictionary()
+    {
+        SpritesDictionary = new Dictionary<Languages, Dictionary<SpriteKeys, Sprite>>()
+        {
+            [Languages.Russian] = new Dictionary<SpriteKeys, Sprite>()
+            {
+                [SpriteKeys.logo] = _russianLogo
+            },
+
+            [Languages.English] = new Dictionary<SpriteKeys, Sprite>()
+            {
+                [SpriteKeys.logo] = _englishLogo
+            },
+
+            [Languages.Turkish] = new Dictionary<SpriteKeys, Sprite>()
+            {
+                [SpriteKeys.logo] = _turkishLogo
             }
         };
     }
