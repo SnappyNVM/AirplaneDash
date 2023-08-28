@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Skybox_Daytime
+  m_Name: Skybox_Daytime 1
   m_Shader: {fileID: 103, guid: 0000000000000000f000000000000000, type: 0}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -66,7 +66,7 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _Exposure: 0.89
+    - _Exposure: 1.19
     - _Glossiness: 0.5
     - _Metallic: 0
     - _Mode: 0
@@ -79,5 +79,5 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Tint: {r: 0.4509804, g: 0.4509804, b: 0.4509804, a: 0.5019608}
+    - _Tint: {r: 0.2264151, g: 0.2264151, b: 0.2264151, a: 0.5019608}
   m_BuildTextureStacks: []

@@ -14,7 +14,9 @@ public enum Scenes
     Level7,
     Level8,
     Level9,
-    Level10
+    Level10,
+    Level11,
+    Level12
 }
 
 public class SceneLoader : MonoBehaviour
