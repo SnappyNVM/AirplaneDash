@@ -9591,6 +9591,10 @@ PrefabInstance:
       propertyPath: _joystick
       value: 
       objectReference: {fileID: 2113983963}
+    - target: {fileID: 2450430485620221090, guid: 02966e982c7f28848aa2f51af815ad37, type: 3}
+      propertyPath: _speedIncreaseModifer
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 2450430485620221091, guid: 02966e982c7f28848aa2f51af815ad37, type: 3}
       propertyPath: _afterDeathTimeModifer
       value: 4
